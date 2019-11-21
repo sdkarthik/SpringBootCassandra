@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="adamnettles.myretail.gateways.GatewaySpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-11-21T03:54:23" hostname="CT1-8526A-M" time="1.519">
+  <properties/>
+  <testcase name="no exception when template call works" classname="adamnettles.myretail.gateways.GatewaySpec" time="1.378"/>
+  <testcase name="throws exception when product id not found in redsky" classname="adamnettles.myretail.gateways.GatewaySpec" time="0.119"/>
+  <testcase name="non 404 exceptions thrown as themselves[0]" classname="adamnettles.myretail.gateways.GatewaySpec" time="0.008"/>
+  <testcase name="non 404 exceptions thrown as themselves[1]" classname="adamnettles.myretail.gateways.GatewaySpec" time="0.001"/>
+  <testcase name="non 404 exceptions thrown as themselves[2]" classname="adamnettles.myretail.gateways.GatewaySpec" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

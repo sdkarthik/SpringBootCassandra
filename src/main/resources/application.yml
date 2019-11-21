@@ -1,0 +1,7 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: "product"
+      contact-points: localhost
+      port: 9042
+      jmx-enabled: false

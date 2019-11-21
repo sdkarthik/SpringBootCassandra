@@ -4,19 +4,28 @@ Currently aggregates pricing data from local cassandra cluster and product infor
 Allows to modify the product pricinf information in local cassandra cluster after verifying that its a valid Redsky supported product.
 
 #### Local testing
-Requirements:  Docker, Docker Compose
- 
-1. Setup the Cassandra container
+
+Setup the Cassandra container
+
+Note : uses docker-compose.yml to install cassandra service on docker instance and uses /src/main/resources/cassandra_schema.cql script to create the table needed and populate the sample data.
+
 ```
 docker-compose up
 ```
-2. Build and run the Springboot jar using gradle
+Build and run the Springboot jar using gradle
+
 ```
 ./gradlew clean build bootRun
 ```
 
-3. hit the endpoints from swagger
+hit the endpoints from swagger
+
 [http://localhost:8080/swagger-ui.html#/my-retail-controller](http://localhost:8080/swagger-ui.html#/my-retail-controller)
+
+For GET request at /products/{id}, please use id=13860428, since the data corresponding to this id is already populated in local cassandra table.
+
+For HTTP PUT request at the same path (/products/{id}), use the same id=13860428, which is already a valid id in Redsky service to update to any price and currency of your choice.
+
 
 #### Instructions
 myRetail is a rapidly growing company with HQ in Richmond, VA and over 200 stores across the east coast. myRetail wants to make its internal data available to any number of client devices, from myRetail.com to native mobile apps.  The goal for this exercise is to create an end-to-end Proof-of-Concept for a products API, which will aggregate product data from multiple sources and return it as JSON to the caller.
@@ -46,3 +55,11 @@ http://redsky.target.com/v2/pdp/tcin/13860428?excludes=taxonomy,price,promotion,
 
 Reads currentPrice information from a NoSQL data store and combines it with the product id and name from the HTTP request into a single response.
 - BONUS: Accepts an HTTP PUT request at the same path (/products/{id}), containing a JSON request body similar to the GET response, and updates the product’s price in the data store.
+
+
+
+#### How to set up Docker
+
+1. install docker and docker-compose
+
+2. how to install docker and docker-compose ==> use brew install <docker|docker-compose>
